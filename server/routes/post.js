@@ -1,6 +1,7 @@
 const router = require("express").Router();
 const { Post } = require("../models/Post");
 
+// GET all
 router.get("/", (req, res) => {
     Post.find().exec((err, posts) => {
         if (err) return res.json({ success: false, error: err });
@@ -8,6 +9,7 @@ router.get("/", (req, res) => {
     });
 });
 
+// GET one
 router.get("/detail/:id", (req, res) => {
     let id = req.params.id;
 
@@ -17,6 +19,7 @@ router.get("/detail/:id", (req, res) => {
     });
 });
 
+// ADD one
 router.post("/add", (req, res) => {
     const post = new Post(req.body);
     post.save((err) => {
@@ -25,6 +28,7 @@ router.post("/add", (req, res) => {
     });
 });
 
+// UPDATE ONE
 router.put("/update/:id", (req, res) => {
     Post.findByIdAndUpdate(
         req.params.id,
@@ -38,6 +42,7 @@ router.put("/update/:id", (req, res) => {
     );
 });
 
+// DELETE ONE
 router.delete("/delete/:id", (req, res) => {
     Post.findByIdAndRemove(req.params.id).exec((error, deletedItem) => {
         if (error) {
