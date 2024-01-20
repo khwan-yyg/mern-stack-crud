@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
+import { BrowserRouter, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
 import DetailPage from "./components/DetailPage";
 import CreatePost from "./components/CreatePost";
 import EditPost from "./components/EditPost";
+import Header from "./components/Header";
 
 class App extends Component {
   render() {
@@ -12,12 +12,10 @@ class App extends Component {
       <BrowserRouter>
         <div className="container">
           <Header />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/posts/:id" element={<DetailPage />} />
-            <Route path="/add" element={<CreatePost />} />
-            <Route path="/edit/:id" element={<EditPost />} />
-          </Routes>
+          <Route path="/" exact component={LandingPage} />
+          <Route path="/posts/:id" component={DetailPage} />
+          <Route path="/add" component={CreatePost} />
+          <Route path="/edit/:id" component={EditPost} />
         </div>
       </BrowserRouter>
     );

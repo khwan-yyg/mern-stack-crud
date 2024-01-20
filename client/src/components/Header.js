@@ -4,14 +4,13 @@ class Header extends Component {
     render() {
         return (
             <div>
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="/#">MERN Stack CRUD app</a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4 py-3 mb-3">
+                    <div className="navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
-                            <li className="nav-item active">
+                            <li className="nav-item me-3">
+                                <a className="nav-link active" href="/#">MERN Stack app</a>
+                            </li>
+                            <li className="nav-item">
                                 <a className="nav-link" href="/#">All Post</a>
                             </li>
                         </ul>
