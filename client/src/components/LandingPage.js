@@ -19,7 +19,7 @@ class LandingPage extends Component {
         this.setState({
           posts: res.data.posts,
         });
-        console.log("post: ", this.data.posts);
+        console.log("post: ", this.state.posts);
       }
     });
   }
