@@ -19,7 +19,7 @@ class LandingPage extends Component {
         this.setState({
           posts: res.data.posts,
         });
-        console.log("post: ", this.state.posts);
+        console.log("post: ", this.data.posts);
       }
     });
   }
@@ -43,7 +43,7 @@ class LandingPage extends Component {
 
   handleTextSearch = (e) => {
     const searchTerm = e.currentTarget.value;
-    axios.get("/posts").then((res) => {
+    axios.get("https://mern-stack-crud-and-search-app.vercel.app/posts").then((res) => {
       if (res.data.success) {
         this.filterContent(res.data.posts, searchTerm);
       }
@@ -93,7 +93,7 @@ class LandingPage extends Component {
                   <td dangerouslySetInnerHTML={{ __html: post.description }}></td>
                   <td>{post.postCategory}</td>
                   <td className=''>
-                    <a href={`https://mern-stack-crud-and-search-app.vercel.app/edit/${post._id}`} className='btn btn-warning me-3'>
+                    <a href={`/edit/${post._id}`} className='btn btn-warning me-3'>
                       <i className='bx bx-pencil' ></i>Edit
                     </a>
                     <a href="/#" className='btn btn-danger' onClick={() => this.onDelete(post._id)}>
