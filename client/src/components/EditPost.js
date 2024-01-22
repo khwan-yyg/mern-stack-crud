@@ -52,6 +52,7 @@ class EditPost extends Component {
                 description: description,
                 postCategory: category,
             };
+            console.log(data);
             Axios.put(`/posts/update/${id}`, data).then((res) => {
                 if (res.data.success) {
                     alert("Edited successfully");
