@@ -39,7 +39,7 @@ class CreatePost extends Component {
                 postCategory: category,
             };
             console.log(data);
-            Axios.post("/posts/add", data).then((res) => {
+            Axios.post("https://mern-stack-crud-and-search-app.vercel.app/posts/add", data).then((res) => {
                 if (res.data.success) {
                     alert("Added");
                     this.setState({ title: "", description: "", category: "" });

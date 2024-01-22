@@ -10,7 +10,7 @@ class DetailPage extends Component {
     }
     componentDidMount() {
         const id = this.props.match.params.id;
-        axios.get(`/posts/detail/${id}`).then((res) => {
+        axios.get(`https://mern-stack-crud-and-search-app.vercel.app/posts/detail/${id}`).then((res) => {
             if (res.data.success) {
                 this.setState({
                     post: res.data.post,

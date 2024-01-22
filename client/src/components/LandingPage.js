@@ -25,7 +25,7 @@ class LandingPage extends Component {
   }
 
   onDelete = (id) => {
-    axios.delete(`/posts/delete/${id}`).then((res) => {
+    axios.delete(`https://mern-stack-crud-and-search-app.vercel.app/posts/delete/${id}`).then((res) => {
       alert(res.data.title + " : has been deleted successfully");
       this.getPosts();
     });
@@ -93,7 +93,7 @@ class LandingPage extends Component {
                   <td dangerouslySetInnerHTML={{ __html: post.description }}></td>
                   <td>{post.postCategory}</td>
                   <td className=''>
-                    <a href={`/edit/${post._id}`} className='btn btn-warning me-3'>
+                    <a href={`https://mern-stack-crud-and-search-app.vercel.app/edit/${post._id}`} className='btn btn-warning me-3'>
                       <i className='bx bx-pencil' ></i>Edit
                     </a>
                     <a href="/#" className='btn btn-danger' onClick={() => this.onDelete(post._id)}>
