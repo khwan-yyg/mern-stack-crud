@@ -14,7 +14,7 @@ class LandingPage extends Component {
   }
 
   getPosts() {
-    axios.get("https://mern-stack-crud-and-search-app.vercel.app/posts").then((res) => {
+    axios.get("/posts").then((res) => {
       if (res.data.success) {
         this.setState({
           posts: res.data.posts,
