@@ -15,7 +15,6 @@ class DetailPage extends Component {
                 this.setState({
                     post: res.data.post,
                 });
-                console.log("post: ", this.state.post);
             }
         });
     }

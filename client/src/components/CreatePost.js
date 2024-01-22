@@ -38,7 +38,6 @@ class CreatePost extends Component {
                 description: description,
                 postCategory: category,
             };
-            console.log(data);
             Axios.post("/posts/add", data).then((res) => {
                 if (res.data.success) {
                     alert("Added");
