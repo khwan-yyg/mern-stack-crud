@@ -23,6 +23,7 @@ app.use("/posts", require("./routes/post"));
 // routes
 app.get('/', (req, res) => {
     res.json({ mssg: 'Welcome to the app' })
+    res.json("Hello");
 })
 
 // connect to db
