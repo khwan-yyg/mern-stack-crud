@@ -12,7 +12,7 @@ app.use(express.json());
 
 app.use(cors(
     {
-        origin: ["https://mern-stack-crud-and-search-app.vercel.app/"],
+        origin: ["https://mern-stack-crud-and-search-app-frontend.vercel.app/"],
         methods: ["POST", "GET"],
         credentials: true
     }
